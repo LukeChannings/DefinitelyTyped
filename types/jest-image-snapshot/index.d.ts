@@ -54,11 +54,13 @@ export interface MatchImageSnapshotOptions {
      */
     diffDirection?: 'horizontal' | 'vertical';
     /**
-     * Will output base64 string of a diff image to console in case of failed tests (in addition to creating a diff image).
+     * true: Will output base64 string of a diff image to console in case of failed tests (in addition to creating a diff image).
      * This string can be copy-pasted to a browser address string to preview the diff for a failed test.
+    * 'inline': Will output the image to the terminal using iTerm's [Inline Images
+    Protocol](https://iterm2.com/documentation-images.html).
      * @default false
      */
-    dumpDiffToConsole?: boolean;
+    dumpDiffToConsole?: boolean | 'inline';
     /**
      * Removes coloring from the console output, useful if storing the results to a file.
      * @default false.
